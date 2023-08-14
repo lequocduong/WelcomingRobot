@@ -1,0 +1,91 @@
+body{
+ background-color: gray;
+}
+
+.videos {
+/*position: relative;
+  /*  width: 100vw;
+    height: 100vh;*/
+}
+#remoteVideos video, canvas.video {
+    margin: auto;
+    width: 70vw;
+    height: 52.5vw;
+    background: pink;
+    max-height: 100vh;
+    max-width: 133.33vh;
+    top: 0;bottom: 0;
+    left: 0;/*right: 0;*/
+    position: absolute;
+}
+#overlay {
+    margin: auto;
+    width: 70vw;
+    height: 52.5vw;
+    background: pink;
+    opacity: 0.01;
+    max-height: 100vh;
+    max-width: 133.33vh;
+    top: 0;bottom: 0;
+    left: 0;/*right: 0;*/
+    position: absolute;
+    z-index: 100;
+    border: 10px solid red;
+
+}
+#localVideo {
+    width: 15%;
+    min-width: 12em;
+    position: absolute;
+    bottom: 25px;
+    left: 30px
+}
+
+.commands{
+background-color: blue;
+    margin: auto;
+    width: 30vw;
+    background: #222;
+    max-height: 100vh;
+    max-width: 133.33vh;
+    top: 0;bottom: 0;
+    right: 0;/*right: 0;*/
+    position: absolute;
+}
+
+.status td{
+   vertical-align:middle;
+}
+
+.controles span {
+font-size:1.5em;
+}
+.status span {
+font-size:1.5em;
+}
+canvas {
+    width: 100%;
+    height: auto;
+}
+
+#touchLeft , #touchRight
+{
+font-size:4em;
+}
+
+
+#touchLeft.touched,#touchRight.touched
+{
+  color:green;
+  font-weight: bold;
+}
+#touchLeft
+{
+    transform: scaleX(-1);
+    -moz-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    -ms-transform: scaleX(-1);
+}
+#touchRight
+{
+}

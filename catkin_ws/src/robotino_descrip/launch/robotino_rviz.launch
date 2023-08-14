@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<launch>
+  <node pkg="tf" type="static_transform_publisher" name="map_to_odom" args="0 0 0 0 0 0 odom map 30" />
+    <param name="robot_description" command="$(find xacro)/xacro $(find robotino_descrip)/urdf/robotino.xacro" />
+    
+  <node pkg="tf" type="static_transform_publisher" name="base_link_to_base_scan" args="-0.032 0 0.75 0 0 0 base_link base_scan 30" />
+    
+    <node pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher">
+        <param name="use_gui" value="False"/>
+        
+    </node>
+
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
+        
+    </node>
+
+    <!-- <node pkg="rviz" type="rviz" name="rviz">
+        
+    </node>     -->
+
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find robotino_descrip)/rviz/robotino.rviz" >
+    </node>
+
+
+    <!-- <node name="mybot_spawn" pkg="gazebo_ros" type="spawn_model" output="screen"
+          args="-urdf -param robot_description -model robotino" /> -->
+          
+</launch>

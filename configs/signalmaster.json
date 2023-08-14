@@ -1,0 +1,27 @@
+{
+    "isDev": true, 
+    "rooms": {
+        "maxClients": 0
+    }, 
+    "server": {
+        "cert": "../ssl/device.crt",
+        "key": "../ssl/device.key",
+        "password": null, 
+        "port": 6060, 
+        "secure": true
+    }, 
+    "stunservers": [
+        {
+            "url": "stun:localhost:6478"
+        }
+    ], 
+    "turnservers": [
+        {
+            "expiry": 86400, 
+            "secret": "fabmstic", 
+            "urls": [
+                "turn:localhost"
+            ]
+        }
+    ]
+}

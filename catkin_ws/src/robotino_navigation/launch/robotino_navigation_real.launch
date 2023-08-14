@@ -1,0 +1,42 @@
+
+<launch>
+  <!-- Arguments -->
+  
+<!--  <arg name="map_file" default="$(find robotino_navigation)/maps/map2.yaml"/> -->
+  <arg name="open_rviz" default="true"/>
+  <arg name="move_forward_only" default="false"/>
+<param name="robot_description" command="$(find xacro)/xacro $(find robotino_descrip)/urdf/robotino_real.xacro" />
+
+<node pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher">
+        <param name="use_gui" value="False"/>
+        
+    </node>
+
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
+        
+    </node>
+
+  <!-- robotino -->
+ <!-- <include file="$(find robotino_navigation)/launch/robotino_remote_real.launch">
+  </include>
+-->
+  <!-- Map server -->
+ <!-- <node pkg="map_server" name="map_server" type="map_server" args="$(arg map_file)"/>
+  	<remap from="map" to="/map"/>
+-->
+  <!-- AMCL -->
+ <include file="$(find robotino_navigation)/launch/amcl_real.launch"/>
+  	<remap from="map" to="/map"/>
+
+  <!-- move_base -->
+<include file="$(find robotino_navigation)/launch/move_base_real.launch">
+    <arg name="move_forward_only" value="$(arg move_forward_only)"/>
+  </include>
+
+  <!-- rviz -->
+  <group if="$(arg open_rviz)"> 
+    <node pkg="rviz" type="rviz" name="rviz" required="true"
+          args="-d $(find robotino_navigation)/rviz/robotino_navigation.rviz"/>
+  </group>
+  
+</launch>

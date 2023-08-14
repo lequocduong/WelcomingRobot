@@ -1,0 +1,11 @@
+{
+  "httpPort":6081,
+  "httpsPort":6080,
+  "ssl":{
+    "key":"../ssl/device.key",
+    "crt":"../ssl/device.crt",
+    "ca":"../ssl/rootCA.crt"
+  },
+  "login" : "robair",
+  "mdp" : "fabmstic"
+}

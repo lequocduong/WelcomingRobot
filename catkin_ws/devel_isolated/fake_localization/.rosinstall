@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/lqd/RobAIR/catkin_ws/devel_isolated/fake_localization/setup.sh
